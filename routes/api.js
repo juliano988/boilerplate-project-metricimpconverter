@@ -28,7 +28,7 @@ module.exports = function (app) {
 
       const string = convertHandler.getString(initNum, spellInitUnit, returnNum, spellReturnUnit)
 
-      res.json({ initNum: initNum, initUnit: initUnit, returnNum: returnNum, returnUnit: returnUnit, string: string })
+      res.json({ initNum: initNum, initUnit: initUnit, returnNum: Number(returnNum), returnUnit: returnUnit, string: string })
     }
   });
 
