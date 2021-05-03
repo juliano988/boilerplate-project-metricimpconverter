@@ -9,7 +9,7 @@ module.exports = function (app) {
 
   app.route('/api/convert').get(function (req, res) {
     const invalidNumber = Boolean(req.query.input.match(/^\/|\/[0-9]\/|\/{2,}|\/[A-z]|[A-z]\/|[0-9][A-z][0-9]/));
-    const invalidUnit = !Boolean(req.query.input.toLowerCase().match(/[0-9](gal|l|lbs|kg|mi|km)$/));
+    const invalidUnit = !Boolean(req.query.input.toLowerCase().match(/(gal|l|lbs|kg|mi|km)$/));
     
     if (invalidNumber && invalidUnit) {
       res.send('invalid number and unit');
