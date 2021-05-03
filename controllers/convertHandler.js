@@ -5,7 +5,7 @@ function ConvertHandler() {
   };
 
   this.getUnit = function (input) {
-    if (input.match(/[A-z]+/)[0] === 'L') {
+    if (input.match(/[A-z]+/)[0] === 'L' | input.match(/[A-z]+/)[0] === 'l') {
       return 'L';
     } else {
       return input.match(/[A-z]+/)[0].toLowerCase();
