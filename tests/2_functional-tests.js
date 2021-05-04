@@ -32,8 +32,27 @@ suite('Functional Tests', function() {
       .get('/api/convert')
       .query({input: '3/7.2/4kg'})
       .end(function(err,res){
-        console.log(res.text)
         assert.equal(res.text,'invalid number')
+        done()
+      })
+  })
+
+  test('Convert an invalid number AND unit such as 3/7.2/4kilomegagram: GET request to /api/convert.',function(done){
+    chai.request(server)
+      .get('/api/convert')
+      .query({input: '3/7.2/4kilomegagram'})
+      .end(function(err,res){
+        assert.equal(res.text,'invalid number and unit')
+        done()
+      })
+  })
+
+  test('Convert with no number such as kg: GET request to /api/convert.',function(done){
+    chai.request(server)
+      .get('/api/convert')
+      .query({input: 'kg'})
+      .end(function(err,res){
+        assert.equal(JSON.parse(res.text).string,'1 kilograms converts to 2.20462 pounds')
         done()
       })
   })
