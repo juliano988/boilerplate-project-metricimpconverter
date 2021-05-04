@@ -4,7 +4,7 @@ const ConvertHandler = require('../controllers/convertHandler.js');
 
 let convertHandler = new ConvertHandler();
 
-const invalidNumberRegex = /^\/|\/[0-9]\/|\/{2,}|\/[A-z]|[A-z]\/|[0-9][A-z][0-9]/;
+const invalidNumberRegex = /.\/.*\/|^\/|\/[A-z]|[A-z]\/|[0-9][A-z][0-9]/;
 const validUnitRegex = /^(gal|l|lbs|kg|mi|km)(?!.)|[0-9](gal|l|lbs|kg|mi|km)$/;
 
 suite('Unit Tests', function () {

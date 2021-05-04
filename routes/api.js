@@ -8,7 +8,7 @@ module.exports = function (app) {
   let convertHandler = new ConvertHandler();
 
   app.route('/api/convert').get(function (req, res) {
-    const invalidNumber = Boolean(req.query.input.match(/^\/|\/[0-9]\/|\/{2,}|\/[A-z]|[A-z]\/|[0-9][A-z][0-9]/));
+    const invalidNumber = Boolean(req.query.input.match(/.\/.*\/|^\/|\/[A-z]|[A-z]\/|[0-9][A-z][0-9]/));
     const invalidUnit = !Boolean(req.query.input.toLowerCase().match(/^(gal|l|lbs|kg|mi|km)(?!.)|[0-9](gal|l|lbs|kg|mi|km)$/));
     
     if (invalidNumber && invalidUnit) {
