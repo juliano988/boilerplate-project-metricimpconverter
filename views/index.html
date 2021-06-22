@@ -5,15 +5,17 @@
     <meta name="description" content="An example of the Free Code Camp Metric/Imperial Converter Project">
     <link id="favicon" rel="icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="./public/style.css">
   </head>
-  <body>
+  <body class="container">
     <header>
       <h1>Metric/Imperial Converter</h1>
     </header>
-    <hr style='margin: 50px'>
+    <hr >
     <section>
       <h3>Example usage</h3>
       <code>/api/convert?input=4gal</code><br>
@@ -23,11 +25,11 @@
       <h3>Example return</h3>
       <code>{ initNum: 3.1, initUnit: 'mi', returnNum: 4.98895, returnUnit: 'km', string: '3.1 miles converts to 4.98895 kilometers' }</code>
     </section>
-    <hr style='margin: 50px'>
+    <hr >
     <section>
       <div id='testui' >
         <h3 style="text-align: left">Front-End</h3>
-        <form id="convertForm" class="border">
+        <form id="convertForm">
           <input type="text" id="convertField" name="input" placeholder="3.1mi" style="width: 200px">
           <input id="convert" type="submit" value='Convert!'>
         </form>

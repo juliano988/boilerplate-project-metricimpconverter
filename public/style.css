@@ -1,7 +1,11 @@
-code {
-    background-color: whitesmoke;
+body {
+	color: #e63946;
+	background-color: #f1faee;
+	margin-top: 20px;
 }
 
-section, header {
-    margin: 50px;
+hr {
+	color: initial;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
